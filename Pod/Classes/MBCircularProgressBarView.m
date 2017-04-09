@@ -40,7 +40,7 @@
 -(void)initView:(CGRect)frame{
     //Without setting the content scale factor the layer would be pixelated
     [self setContentScaleFactor:[[UIScreen mainScreen] scale]];
-  
+    
     [self setUnitString:@"%"];
     [self setValue:0.f];
     [self setMaxValue:100.f];
@@ -64,17 +64,21 @@
     [self setTextOffset:CGPointMake(0, 0)];
     [self setUnitFontName:@"HelveticaNeue-Thin"];
     [self setCountdown:NO];
+    [self setSubtitleFontName:@"HelveticaNeue-Thin"];
+    [self setShowSubtitleString:YES];
+    [self setSubtitleFontSize:50.0f];
+    [self setSubtitleString:@"Subtitle"];
 }
 
 #pragma mark - Getters and Setters for layer properties
 
 -(void)setShowValueString:(BOOL)showValueString{
-  self.progressLayer.showValueString = showValueString;
-  [self.layer setNeedsDisplay];
+    self.progressLayer.showValueString = showValueString;
+    [self.layer setNeedsDisplay];
 }
 
 -(BOOL)showValueString{
-  return self.progressLayer.showValueString;
+    return self.progressLayer.showValueString;
 }
 
 -(void)setValue:(CGFloat)value{
@@ -224,58 +228,74 @@
 }
 
 -(void)setDecimalPlaces:(NSInteger)decimalPlaces{
-  self.progressLayer.decimalPlaces = decimalPlaces;
+    self.progressLayer.decimalPlaces = decimalPlaces;
 }
 -(NSInteger)decimalPlaces{
-  return self.progressLayer.decimalPlaces;
+    return self.progressLayer.decimalPlaces;
 }
 
 -(void)setValueDecimalFontSize:(CGFloat)valueDecimalFontSize{
-  self.progressLayer.valueDecimalFontSize = valueDecimalFontSize;
+    self.progressLayer.valueDecimalFontSize = valueDecimalFontSize;
 }
 
 -(CGFloat)valueDecimalFontSize{
-  return self.progressLayer.valueDecimalFontSize;
+    return self.progressLayer.valueDecimalFontSize;
 }
 
 -(void)setUnitFontName:(NSString *)unitFontName{
-  self.progressLayer.unitFontName = unitFontName;
+    self.progressLayer.unitFontName = unitFontName;
 }
 
 -(NSString *)unitFontName{
-  return self.progressLayer.unitFontName;
+    return self.progressLayer.unitFontName;
 }
 
 -(void)setValueFontName:(NSString *)valueFontName{
-  self.progressLayer.valueFontName = valueFontName;
+    self.progressLayer.valueFontName = valueFontName;
 }
 
 -(NSString *)valueFontName{
-  return self.progressLayer.valueFontName;
+    return self.progressLayer.valueFontName;
 }
 
 -(void)setShowUnitString:(BOOL)showUnitString{
-  self.progressLayer.showUnitString = showUnitString;
+    self.progressLayer.showUnitString = showUnitString;
 }
 
 -(BOOL)showUnitString{
-  return self.progressLayer.showUnitString;
+    return self.progressLayer.showUnitString;
 }
 
 -(void)setTextOffset:(CGPoint)textOffset{
-  self.progressLayer.textOffset = textOffset;
+    self.progressLayer.textOffset = textOffset;
 }
 
 -(CGPoint)textOffset{
-  return self.progressLayer.textOffset;
+    return self.progressLayer.textOffset;
 }
 
 -(void)setCountdown:(BOOL)countdown {
-  self.progressLayer.countdown = countdown;
+    self.progressLayer.countdown = countdown;
 }
 
 -(BOOL)countdown {
-  return self.progressLayer.countdown;
+    return self.progressLayer.countdown;
+}
+
+- (void)setSubtitleString:(NSString *)subtitleString {
+    self.progressLayer.subtitleString = subtitleString;
+}
+
+- (void)setSubtitleFontName:(NSString *)subtitleFontName {
+    self.progressLayer.subtitleFontName = subtitleFontName;
+}
+
+- (void)setSubtitleFontSize:(CGFloat)subtitleFontSize {
+    self.progressLayer.subtitleFontSize = subtitleFontSize;
+}
+
+- (void)setShowSubtitleString:(BOOL)showSubtitleString {
+    self.progressLayer.showSubtitleString = showSubtitleString;
 }
 
 #pragma mark - CALayer

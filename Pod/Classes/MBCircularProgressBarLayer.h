@@ -133,11 +133,30 @@
  */
 @property (nonatomic,assign)  BOOL      showValueString;
 
-
 /**
  * Show label value as countdown
  * Default is NO
  */
 @property (nonatomic,assign)  BOOL      countdown;
+
+/**
+ * The subtitle string
+ */
+@property (nonatomic,copy)    NSString  *subtitleString;
+
+/**
+ * Should show value string
+ */
+@property (nonatomic,assign)  BOOL      showSubtitleString;
+
+/**
+ * The name of the font of the subtitle string
+ */
+@property (nonatomic,assign)  NSString      *subtitleFontName;
+
+/**
+ * The size of the font of the subtitle string
+ */
+@property (nonatomic,assign)  CGFloat      subtitleFontSize;
 
 @end
